@@ -14,6 +14,8 @@ public interface ParameterKeys {
 
     String CODE_PARAM_KEY = "code";
 
+    String ID_PARAM_KEY = "id";
+
     String PASSWORD_PARAM_KEY = "password";
 
     String NEW_PASSWORD_PARAM_KEY = "new_password";
@@ -21,4 +23,6 @@ public interface ParameterKeys {
     String MESSAGE_ATTRIBUTE_KEY = "message";
 
     String USER_ATTRIBUTE_KEY = "user";
+
+    String DESCRIPTION_PARAM_KEY = "description";
 }

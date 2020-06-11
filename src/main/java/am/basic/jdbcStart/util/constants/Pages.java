@@ -14,4 +14,6 @@ public interface Pages {
     String FORGET_PASSWORD_PAGE = "/forget-password.jsp";
 
     String RECOVER_PASSWORD_PAGE = "/recover-password.jsp";
+
+    String START_URL = "/start";
 }

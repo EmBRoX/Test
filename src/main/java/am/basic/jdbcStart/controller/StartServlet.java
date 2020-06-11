@@ -30,6 +30,7 @@ public class StartServlet extends HttpServlet {
             response.sendRedirect(INDEX_PAGE);
             return;
         }
+
         String token = null;
         try {
             token = Encryptor.decrypt(rememberMeCookie.getValue());
@@ -55,7 +56,6 @@ public class StartServlet extends HttpServlet {
             request.setAttribute(USERNAME_PARAM_KEY, username);
             request.getRequestDispatcher(VERIFICATION_PAGE).forward(request, response);
         } catch (NotFoundException | InternalServerException  e) {
-            request.setAttribute(MESSAGE_ATTRIBUTE_KEY, e.getMessage());
             request.getRequestDispatcher(INDEX_PAGE).forward(request, response);
         } catch (RuntimeException exception) {
             request.setAttribute(MESSAGE_ATTRIBUTE_KEY, INTERNAL_ERROR_MESSAGE);

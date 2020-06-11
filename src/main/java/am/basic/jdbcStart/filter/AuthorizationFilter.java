@@ -9,6 +9,7 @@ import java.io.IOException;
 
 import static am.basic.jdbcStart.util.constants.Messages.SESSION_EXPIRED_MESSAGE;
 import static am.basic.jdbcStart.util.constants.Pages.INDEX_PAGE;
+import static am.basic.jdbcStart.util.constants.Pages.START_URL;
 import static am.basic.jdbcStart.util.constants.ParameterKeys.MESSAGE_ATTRIBUTE_KEY;
 import static am.basic.jdbcStart.util.constants.ParameterKeys.USER_ATTRIBUTE_KEY;
 
@@ -28,7 +29,7 @@ public class AuthorizationFilter implements Filter {
         User user = (User) request.getSession().getAttribute(USER_ATTRIBUTE_KEY);
         if (user == null) {
             request.setAttribute(MESSAGE_ATTRIBUTE_KEY, SESSION_EXPIRED_MESSAGE);
-            request.getRequestDispatcher(INDEX_PAGE).forward(request, response);
+            request.getRequestDispatcher(START_URL).forward(request, response);
         }else {
             chain.doFilter(request,response);
         }
